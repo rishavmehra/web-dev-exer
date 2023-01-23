@@ -12,4 +12,3 @@ let person = {
   let greet = person.greet.bind(person2);
   person.greet.call(person2);
   greet();
-  

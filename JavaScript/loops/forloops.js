@@ -9,6 +9,6 @@ const myState = [
 ];
 
 for (let i = 0; i < myState.length; i++) {
-    if(typeof myState[i] != 'string') continue;
+    // if(typeof myState[i] != 'string') continue; // this line uses for the removing the 1947 
     console.log(myState[i]);
 }
