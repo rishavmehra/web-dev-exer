@@ -1,0 +1,24 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "learnings of nodejs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rishavmehra/web-dev-exer.git"
+  },
+  "author": "Rishav Mehra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rishavmehra/web-dev-exer/issues"
+  },
+  "homepage": "https://github.com/rishavmehra/web-dev-exer#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
