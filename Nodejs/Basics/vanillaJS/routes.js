@@ -18,7 +18,7 @@ const requestHandler = (req, res) =>{
         })
         return req.on("end", ()=>{  // we don't need return the when return in end  
             const parseBody = Buffer.concat(body).toString();
-            const massage = parseBody.split("=")[1]
+            const massage = parseBody.split("=")[0]
             // fs.writeFileSync("massage.txt", massage)
             fs.writeFile("massage.txt", massage, (err) => { 
                 res.statusCode = 302;

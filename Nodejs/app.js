@@ -1,9 +1,28 @@
-const rishavHTTP = require('http');
+const express = require('express');
+const bodyParser = require('body-parser');
 
-const routes = require('./routes'); 
+const app = express();
 
-console.log(routes.someText);
+app.use(bodyParser.urlencoded({extended: false}));
 
-const server = rishavHTTP.createServer(routes.handler);
+app.use('/add-product', (req, res, next) => {
+    console.log('Add-Product route, In the middleware!');
+    res.send('<form action="/product" method="POST"><input type="text" name="massage"><button type="submit"> Add product</button></form>');
+    
+    // next(); // Allows the request to continue to the next middleware in line
+});
 
-server.listen(3000);
+app.post('/product', (req, res, next) => {
+    // console.log(`Product route, In the middleware! | a massage: ${req.body.massage}`);
+    console.log(req.body);
+    res.redirect('/');
+    // res.send('<h1>Product added!</h1>');
+});
+
+app.use('/', (req, res, next) => {
+    console.log('In another-1 middleware!');
+    res.send('<h1>Hello from Express!</h1>');
+});
+
+app.listen(3000);
+
